@@ -290,13 +290,13 @@ angular.module('ui.calendar', [])
                         if (attrs.calendar) {
                             calendar = uiCalendarConfig.calendars[attrs.calendar] = $(elm).html('');
                         } else {
-                            calendar = $(elm).html('');
+                            calendar = jQuery(elm).html('');
                         }
                     };
 
                     scope.initCalendar = function () {
                         if (!calendar) {
-                            calendar = $(elm).html('');
+                            calendar = jQuery(elm).html('');
                         }
                         calendar.fullCalendar(options);
                         if (attrs.calendar) {
@@ -377,7 +377,7 @@ angular.module('ui.calendar', [])
                             calendar.fullCalendar('removeResource', resource);
                         }
                     };
-                    
+
                     resourceWatcher.subscribe(scope);
 
                     scope.$watch(getOptions, function (newValue, oldValue) {
